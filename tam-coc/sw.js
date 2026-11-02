@@ -1,6 +1,6 @@
-// 20261102-053831
-const V="tamcoc-20261102-053831";
-self.addEventListener("install",e=>{self.skipWaiting();e.waitUntil(caches.open(V).then(c=>c.addAll(["./","manifest.webmanifest","apple-touch-icon-v4.png"]).catch(()=>{})));});
+// 20261102-053924
+const V="tamcoc-20261102-053924";
+self.addEventListener("install",e=>{self.skipWaiting();e.waitUntil(caches.open(V).then(c=>c.addAll(["./","manifest.webmanifest","apple-touch-icon-v5.png"]).catch(()=>{})));});
 self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==V).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
 self.addEventListener("fetch",e=>{const r=e.request;if(r.method!=="GET")return;const u=new URL(r.url);if(u.origin!==location.origin)return;
   // page + version: always network first, never the HTTP cache → a reload always shows the latest version
